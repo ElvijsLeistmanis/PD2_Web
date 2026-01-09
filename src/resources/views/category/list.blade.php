@@ -5,7 +5,7 @@
         <table class="table table-striped table-hover table-sm">
             <thead class="thead-light">
                 <tr>
-                    <th>ID</td> 
+                    <th>ID</td>
                     <th>Category</td>
                     <th>&nbsp;</td>
                 </tr>
@@ -15,7 +15,8 @@
                     <tr>
                         <td>{{ $category->id }}</td>
                         <td>{{ $category->name }}</td>
-                        <td>Update, Delete</td>
+                        <td><a href="/categories/update/{{ $category->id }}" class="btn btn-outline-primary btn-
+                                sm">Update</a></td>
                     </tr>
                 @endforeach
             </tbody>

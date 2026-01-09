@@ -26,7 +26,8 @@ class CategoryController extends Controller
         return view(
             'category.form',
             [
-                'title' => 'Create category'
+                'title' => 'Create category',
+                'category' => new Category()
             ]
         );
     }
@@ -37,6 +38,27 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255',
         ]);
         $category = new Category();
+        $category->name = $validatedData['name'];
+        $category->save();
+        return redirect('/categories');
+    }
+
+    public function update(Category $category): View
+    {
+        return view(
+            'category.form',
+            [
+                'title' => 'Update category',
+                'category' => $category
+            ]
+        );
+    }
+
+    public function patch(Category $category, Request $request): RedirectResponse
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
         $category->name = $validatedData['name'];
         $category->save();
         return redirect('/categories');
