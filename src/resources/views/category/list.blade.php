@@ -23,4 +23,5 @@
     @else
         <p>No entry found</p>
     @endif
+    <a href="/categories/create" class="btn btn-primary">Create category</a>
 @endsection
