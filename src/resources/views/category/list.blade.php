@@ -15,8 +15,13 @@
                     <tr>
                         <td>{{ $category->id }}</td>
                         <td>{{ $category->name }}</td>
-                        <td><a href="/categories/update/{{ $category->id }}" class="btn btn-outline-primary btn-
-                                sm">Update</a></td>
+                        <td>
+                            <a href="/categories/update/{{ $category->id }}" class="btn btn-outline-primary btn-sm">Update</a>
+                            <form action="/categories/delete/{{ $category->id }}" method="post" class="deletion-form d-inline">
+                                @csrf
+                                <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

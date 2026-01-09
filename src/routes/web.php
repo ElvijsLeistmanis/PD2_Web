@@ -13,3 +13,5 @@ Route::post('/categories/put', [CategoryController::class, 'put']);
 
 Route::get('/categories/update/{category}', [CategoryController::class, 'update']);
 Route::post('/categories/patch/{category}', [CategoryController::class, 'patch']);
+
+Route::post('/categories/delete/{category}', [CategoryController::class, 'delete']);

@@ -63,4 +63,11 @@ class CategoryController extends Controller
         $category->save();
         return redirect('/categories');
     }
+    public function delete(Category $category): RedirectResponse
+    {
+        //TODO: Reject category deletion if an entry is already attached to it.
+        $category->delete();
+        return redirect('/categories');
+    }
 }
+
